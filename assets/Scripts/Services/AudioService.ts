@@ -1,4 +1,3 @@
-// AudioService.ts
 import { _decorator, AudioSource, AudioClip } from 'cc';
 
 const { ccclass, property } = _decorator;
@@ -11,16 +10,7 @@ export default class AudioService {
   @property({ type: AudioClip })
   clickSound: AudioClip = null;
 
-  private static instance: AudioService;
-
-  private constructor() {}
-
-  public static getInstance(): AudioService {
-    if (!AudioService.instance) {
-      AudioService.instance = new AudioService();
-    }
-    return AudioService.instance;
-  }
+  constructor() {}
 
   public playBackgroundMusic(): void {
     if (this.backgroundMusic && this.backgroundMusic.clip) {
@@ -42,6 +32,4 @@ export default class AudioService {
       }
     }
   }
-
-
 }
